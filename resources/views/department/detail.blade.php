@@ -3,7 +3,7 @@
 @section('content')
     <h1>This is Department Detail for update and delete</h1>
     {!! Form::open(['url' => 'foo/bar']) !!}
-    <h1>{{$role-> id}}</h1>
+    <h1>{{$department-> id}}</h1>
     <div class="container">
         <h1>{{$department-> department_name}}</h1>
         <h1>{{$department-> email}}</h1>

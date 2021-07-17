@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Recruitment;
+use App\Models\Role;
+use App\Models\Department;
+use Illuminate\Support\Facades\DB;
+
 
 class RecruitmentController extends Controller
 {
@@ -18,9 +22,9 @@ class RecruitmentController extends Controller
         //     "recruitments" => Recruitment::latest()->get()
         // ]);
 
-        $recruitment = Recruitment::with('roles')->get();
-        $recruitment = Recruitment::with('department')->get();
-        return view('recruitment.home')->with('recruitments',$recruitment);
+
+        $this->recruitments = \App\Models\Recruitment::where('role_id')->get();
+        return view('recruitment.home');
     }
 
     /**
@@ -30,7 +34,10 @@ class RecruitmentController extends Controller
      */
     public function create()
     {
-        return view('recruitment.create');
+        return view('recruitment.create',
+        ['roles' => Role::all()],
+        ['departments' => Department::all()]
+        );
     }
 
     /**

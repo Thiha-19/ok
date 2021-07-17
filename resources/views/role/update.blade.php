@@ -1,30 +1,29 @@
 @extends('layout.app')
 
 @section('content')
-    <h1>This is Department Update</h1>
-    {!! Form::open(['action' => '\App\Http\Controllers\DepartmentController@update', 'method' =>'POST']) !!}
+    <h1>This is Role Update</h1>
+    {!! Form::open(['action' => ['\App\Http\Controllers\RoleController@update', $role->id], 'method' =>'POST']) !!}
 
     <div class="form-group">
-        {{ Form::label('department_name','Department Name') }}
-        {{ Form::text('name',$department->department_name,['class' => 'form-control', 'placeholder' => 'Eg.Food']) }}
+        {{ Form::label('role','Role Name') }}
+        {{ Form::text('role',$role->role,['class' => 'form-control']) }}
     </div>
 
     <div class="form-group">
-        {{ Form::label('email','Email') }}
-        {{ Form::text('name',$department->email,['class' => 'form-control', 'placeholder' => 'Eg.@mail.com']) }}
-    </div>
-
-    <div class="form-group">
-        {{ Form::label('location','Location') }}
-        {{ Form::text('name',$department->location,['class' => 'form-control', 'placeholder' => 'Eg.City']) }}
+        {{ Form::label('approx_salary','Approxiamte Salary') }}
+        {{ Form::text('approx_salary',$role->approx_salary,['class' => 'form-control']) }}
     </div>
 
     <div class="form-group">
         {{ Form::label('description','Description') }}
-        {{ Form::textarea('name',$department->description, ['class' => 'form-control', 'placeholder' => 'Eg.yes']) }}
+        {{ Form::textarea('description',$role->description, ['class' => 'form-control']) }}
     </div>
 
-        {{ Form::submit('Save', ['class' => 'btn btn-primary']) }}
+        {{ Form::hidden('_method', 'PUT') }}
+        {{ Form::submit('Update', ['class' => 'btn btn-primary']) }}
 
 {!! Form::close() !!}
 @endsection
+
+
+

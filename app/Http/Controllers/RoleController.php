@@ -75,6 +75,7 @@ class RoleController extends Controller
     {
         $role = Role::find($id);
         return view('role.update')->with('role', $role);
+
     }
 
     /**

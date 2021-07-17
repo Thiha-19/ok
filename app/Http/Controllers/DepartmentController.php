@@ -14,7 +14,7 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        return view('Department.home', [
+        return view('department.home', [
             "departments" => Department::latest()->get()
         ]);
     }

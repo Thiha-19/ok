@@ -8,7 +8,7 @@
         <h1>{{$role-> role}}</h1>
         <h1>{{$role-> approx_salary}}</h1>
         <h1>{{$role-> description}}</h1>
-        <a href="/roles/{{ $role->id }}/update">Edit</a>
+        <a href="/roles/{{ $role->id }}/edit">Update</a>
         <a href="/roles" class="btn btn-default">Back</a>
     </div>
 
