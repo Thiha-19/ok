@@ -51,45 +51,30 @@ class RecruitmentController extends Controller
             'start_date' => 'required',
             'end_date' => 'required',
             'description' => 'required',
-            'role_id ' => 'required',
-            'department_id' => 'required',
         ]);
 
         //create recruitment
         $recruitment = new Recruitment;
-        $recruitment->num_of_positions = $request->input('department_name');
-        $recruitment->start_date = $request->input('email');
-        $recruitment->end_date = $request->input('location');
-        $recruitment->description = $request->input('location');
-        $recruitment->role_id = $request->input('location');
-        $recruitment->department_id = $request->input('description');
+        $recruitment->num_of_positions = $request->input('num_of_positions');
+        $recruitment->start_date = $request->input('start_date');
+        $recruitment->end_date = $request->input('end_date');
+        $recruitment->description = $request->input('description');
+        $recruitment->role_id = $request->input('role');
+        $recruitment->department_id = $request->input('department');
+
+
         $recruitment->save();
 
-        return redirect('/departments')->with('success', 'Department Added');
+        // $role = new Role();
+        // $role->id = $request->input('role_id');
+        // $recruitment->role()->save($role);
 
-        ////////////////////////////////////////////////////////////////////
+        // $department = new Department();
+        // $department->id = $request->input('department_id');
+        // $recruitment->department()->save($department);
 
-        $this->validate($request, [
-            'num_of_positions' => 'required',
-            'start_date' => 'required',
-            'end_date' => 'required',
-            'description' => 'required',
-        ]);
+        return redirect('/recruitments')->with('success', 'Recruitment Added');
 
-        $role_id = Auth::user()->role_id;
-
-        \App\Models\Role::updateOrCreate(['id' => $this->role_id], [
-            'role' => $this->role,
-            'role_id' => $role_id
-        ]);
-
-        session()->flash('message',
-            $this->category_id ? 'category Updated Successfully.' : 'category Created Successfully.');
-
-        $this->closeModal();
-        $this->resetInputFields();
-
-        ///////////////////////////////////////////////////////////
     }
 
     /**

@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    @include('inc.nav')
+    {{-- @include('inc.nav') --}}
     <div class="container">
         <div id="app">
             <example-component></example-component>

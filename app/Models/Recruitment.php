@@ -16,7 +16,7 @@ class Recruitment extends Model
 
     public function roles(): BelongsTo
     {
-        return $this->belongsTo(Role::class, 'id');
+        return $this->belongsTo(Role::class,);
     }
 
     public function departments(): BelongsTo
