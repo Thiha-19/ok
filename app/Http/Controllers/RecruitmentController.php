@@ -18,13 +18,11 @@ class RecruitmentController extends Controller
      */
     public function index()
     {
-        // return view('recruitment.home', [
-        //     "recruitments" => Recruitment::latest()->get()
-        // ]);
+        // $recruitments = Recruitment::all();
+        // return view('recruitment.home')->with(['recruitments' => $recruitments]);
 
-
-        $this->recruitments = \App\Models\Recruitment::where('role_id')->get();
-        return view('recruitment.home');
+        $recruitments = Recruitment::with(['roles', 'departments']);
+        return view('recruitment.home', compact('recruitments'));
     }
 
     /**
@@ -58,7 +56,7 @@ class RecruitmentController extends Controller
         ]);
 
         //create recruitment
-        $recruitment = new Department;
+        $recruitment = new Recruitment;
         $recruitment->num_of_positions = $request->input('department_name');
         $recruitment->start_date = $request->input('email');
         $recruitment->end_date = $request->input('location');

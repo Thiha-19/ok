@@ -13,13 +13,13 @@ class Recruitment extends Model
         'num_of_positions', 'start_date', 'end_date', 'description', 'role_id', 'department_id', 'recruitment_id'
     ];
 
-    
-    public function roles(): BelongsToMany
+
+    public function roles(): BelongsTo
     {
-        return $this->belongsToMany(Role::class,);
+        return $this->belongsToMany(Role::class, 'id');
     }
 
-    public function departments(): BelongsToMany
+    public function departments(): BelongsTo
     {
         return $this->belongsToMany(Department::class,);
     }
@@ -28,4 +28,5 @@ class Recruitment extends Model
     {
         return $this->hasMany(candidate::class,);
     }
+
 }
