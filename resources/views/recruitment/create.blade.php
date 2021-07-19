@@ -6,7 +6,7 @@
 
         <div class="form-group">
             {{ Form::label('num_of_positions','Number of Positions') }}
-            {{ Form::text('num_of_positions','',['class' => 'form-control', 'placeholder' => 'Eg.Marketing Staff']) }}
+            {{ Form::text('num_of_positions','',['class' => 'form-control', 'placeholder' => 'Eg.2']) }}
         </div>
 
         <div>
@@ -14,7 +14,7 @@
             <select name="role" class="form-control">
                 <option value=""> Select Role </option>
                 @foreach ($roles as $role)
-                    <option value="{{ $role->'roles'->id }}">{{ ucfirst($role->'roles'->role) }}</option>
+                    <option value="{{ $role->id }}">{{ ucfirst($role->role) }}</option>
                 @endforeach
             </select>
         </div>
@@ -23,8 +23,9 @@
             {{ Form::label('num_of_positions','Choose Department') }}
             <select name="department" class="form-control">
                 <option value=""> Select Department </option>
-                @foreach ($recruitments as $recruitment)
-                    <option value="{{ $recruitment->'departments'->id }}">{{ ucfirst($recruitment->'departments'->department_name) }}</option>
+                @foreach ($departments as $department)
+                    <option value="{{ $department->id }}">{{ ucfirst($department->department_name) }}</option>
+                    {{-- <option value="{{ $department->'departments'->id }}">{{ ucfirst($department->'departments'->department_name) }}</option> --}}
                 @endforeach
             </select>
         </div>

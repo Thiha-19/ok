@@ -16,12 +16,12 @@ class Recruitment extends Model
 
     public function roles(): BelongsTo
     {
-        return $this->belongsToMany(Role::class, 'id');
+        return $this->belongsTo(Role::class, 'id');
     }
 
     public function departments(): BelongsTo
     {
-        return $this->belongsToMany(Department::class,);
+        return $this->belongsTo(Department::class,);
     }
 
     public function candidates(): HasMany

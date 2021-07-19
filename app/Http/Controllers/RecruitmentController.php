@@ -18,11 +18,11 @@ class RecruitmentController extends Controller
      */
     public function index()
     {
-        // $recruitments = Recruitment::all();
-        // return view('recruitment.home')->with(['recruitments' => $recruitments]);
+        $recruitments = Recruitment::all();
+        return view('recruitment.home')->with(['recruitments' => $recruitments]);
 
-        $recruitments = Recruitment::with(['roles', 'departments']);
-        return view('recruitment.home', compact('recruitments'));
+        // $recruitments = Recruitment::with(['roles', 'departments']);
+        // return view('recruitment.home', compact('recruitments'));
     }
 
     /**
