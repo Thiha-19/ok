@@ -74,7 +74,7 @@ class RecruitmentController extends Controller
     public function show($id)
     {
         $recruitment = Recruitment::find($id);
-        return view('recruitment.update',
+        return view('recruitment.detail',
         ['roles' => Role::all()],
         ['departments' => Department::all()])->with('recruitment', $recruitment);
     }
@@ -87,6 +87,7 @@ class RecruitmentController extends Controller
      */
     public function edit($id)
     {
+        $recruitment = Recruitment::find($id);
         return view('recruitment.update',
         ['roles' => Role::all()],
         ['departments' => Department::all()]
