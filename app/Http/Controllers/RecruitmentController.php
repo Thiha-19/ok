@@ -19,10 +19,10 @@ class RecruitmentController extends Controller
     public function index()
     {
         $recruitments = Recruitment::all();
-        return view('recruitment.home')->with(['recruitments' => $recruitments]);
+        return view('recruitment.home',
+        ['roles' => Role::all()],
+        ['departments' => Department::all()])->with(['recruitments' => $recruitments]);
 
-        // $recruitments = Recruitment::with(['roles', 'departments']);
-        // return view('recruitment.home', compact('recruitments'));
     }
 
     /**
@@ -61,20 +61,8 @@ class RecruitmentController extends Controller
         $recruitment->description = $request->input('description');
         $recruitment->role_id = $request->input('role');
         $recruitment->department_id = $request->input('department');
-
-
         $recruitment->save();
-
-        // $role = new Role();
-        // $role->id = $request->input('role_id');
-        // $recruitment->role()->save($role);
-
-        // $department = new Department();
-        // $department->id = $request->input('department_id');
-        // $recruitment->department()->save($department);
-
         return redirect('/recruitments')->with('success', 'Recruitment Added');
-
     }
 
     /**
@@ -85,7 +73,10 @@ class RecruitmentController extends Controller
      */
     public function show($id)
     {
-        //
+        $recruitment = Recruitment::find($id);
+        return view('recruitment.update',
+        ['roles' => Role::all()],
+        ['departments' => Department::all()])->with('recruitment', $recruitment);
     }
 
     /**
@@ -96,7 +87,10 @@ class RecruitmentController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('recruitment.update',
+        ['roles' => Role::all()],
+        ['departments' => Department::all()]
+        )->with('recruitment', $recruitment);
     }
 
     /**
@@ -108,7 +102,25 @@ class RecruitmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this -> validate($request, [
+            'num_of_positions' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required',
+            'description' => 'required',
+        ]);
+
+        //update recruitment
+        $recruitment = Recruitment::find($id);
+        $recruitment->num_of_positions = $request->input('num_of_positions');
+        $recruitment->start_date = $request->input('start_date');
+        $recruitment->end_date = $request->input('end_date');
+        $recruitment->description = $request->input('description');
+        $recruitment->role_id = $request->input('role');
+        $recruitment->department_id = $request->input('department');
+        $recruitment->save();
+        return redirect('/recruitments')->with('success', 'Recruitment updated');
+
+
     }
 
     /**

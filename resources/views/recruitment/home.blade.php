@@ -8,7 +8,9 @@
             <a href="/recruitments/{{$recruitment->id}}"> <small>Description: {{$recruitment->description}}</small></a>
             <a href="/recruitments/{{$recruitment->id}}"> <small>Starting Date: {{$recruitment->start_date}}</small></a>
             <a href="/recruitments/{{$recruitment->id}}"> <small>Ending Date: {{$recruitment->end_date}}</small></a>
-            {{-- <a href="/recruitments/{{$recruitment->id}}"> <small>Role ID: {{$recruitment->role_id($role->role)}}</small></a> --}}
+            <a href="/recruitments/{{$recruitment->id}}"> <small>Role ID: {{$recruitment->role_id}}</small></a>
+            <a href="/recruitments/{{$recruitment->id}}"> <small>Department ID: {{$recruitment->department_id}}</small></a>
+            {{-- <a href="/recruitments/{{$recruitment->id}}"> <small value="{{$recruitment->role_id}}"{{ $role->id == $recruitment->id ? 'selected' : ''}}>Role ID: {{ $role->role }}</small></a> --}}
         </div>
         @endforeach
 

@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>This is Department Update</h1>
-    {!! Form::open(['action' => '\App\Http\Controllers\DepartmentController@update', 'method' =>'POST']) !!}
+    {!! Form::open(['action' => ['\App\Http\Controllers\DepartmentController@update', $department->id], 'method' =>'POST']) !!}
 
     <div class="form-group">
         {{ Form::label('department_name','Department Name') }}

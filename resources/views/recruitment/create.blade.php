@@ -10,7 +10,7 @@
         </div>
 
         <div>
-            {{ Form::label('num_of_positions','Choose Role') }}
+            {{ Form::label('role','Choose Role') }}
             <select name="role" class="form-control">
                 <option value=""> Select Role </option>
                 @foreach ($roles as $role)
@@ -20,7 +20,7 @@
         </div>
 
         <div>
-            {{ Form::label('num_of_positions','Choose Department') }}
+            {{ Form::label('department','Choose Department') }}
             <select name="department" class="form-control">
                 <option value=""> Select Department </option>
                 @foreach ($departments as $department)
@@ -42,7 +42,7 @@
 
         <div class="form-group">
             {{ Form::label('description','Description') }}
-            {{ Form::textarea('description','',['class' => 'form-control', 'placeholder' => 'Eg.yes']) }}
+            {{ Form::textarea('description','',['class' => 'form-control']) }}
         </div>
 
             {{ Form::submit('Save', ['class' => 'btn btn-primary']) }}
