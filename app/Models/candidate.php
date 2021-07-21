@@ -16,9 +16,11 @@ class candidate extends Model
         'postal',
         'phone',
         'prior_exp',
+        'education',
+        'gradfrom',
+        'graddate',
         'add_info',
-        'expected_salary',
-        'education_id'
+        'expected_salary'
     ];
 
     public function recruitments(): BelongsTo

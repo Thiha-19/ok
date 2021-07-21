@@ -24,7 +24,7 @@ class CreateCandidatesTable extends Migration
             $table->string('prior_exp');
             $table->string('education');
             $table->string('gradfrom');
-            $table->date('graddate');
+            $table->string('graddate');
             $table->string('add_info');
             $table->string('expected_salary');
             $table->timestamps();
