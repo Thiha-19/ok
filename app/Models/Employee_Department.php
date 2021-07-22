@@ -13,8 +13,8 @@ class Employee_Department extends Model
         'role_id', 'department_id', 'employee_id'
     ];
 
-   
-    public function users(): BelongsTo
+
+    public function employees(): BelongsTo
     {
         return $this->belongsTo(User::class,);
     }

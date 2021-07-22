@@ -28,7 +28,7 @@ class candidate extends Model
         return $this->belongsTo(Recruitment::class,);
     }
 
-    public function users(): HasMany
+    public function employees(): HasMany
     {
         return $this->hasMany(User::class,);
     }
