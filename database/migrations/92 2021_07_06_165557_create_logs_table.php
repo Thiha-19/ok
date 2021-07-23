@@ -23,7 +23,7 @@ class CreateLogsTable extends Migration
             $table->unsignedBigInteger('employee_id');
 
             $table->foreign('log_type_id')->references('id')->on('log_types');//->onDelete('cascade');
-            $table->foreign('employee_id')->references('id')->on('users');//->onDelete('cascade');
+            $table->foreign('employee_id')->references('id')->on('employees');//->onDelete('cascade');
         });
     }
 

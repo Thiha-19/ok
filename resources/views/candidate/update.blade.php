@@ -56,7 +56,7 @@
 
     <div class="form-group">
         {{ Form::label('add_info','Additional Information') }}
-        {{ Form::text('add_info',$candidate->add_info,['class' => 'form-control']) }}
+        {{ Form::textarea('add_info',$candidate->add_info,['class' => 'form-control']) }}
     </div>
 
         {{ Form::hidden('_method', 'PUT') }}

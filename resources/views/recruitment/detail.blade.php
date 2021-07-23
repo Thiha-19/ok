@@ -14,7 +14,9 @@
 
         <a href="/recruitments/{{ $recruitment->id }}/edit">Update</a>
         <a href="/recruitments" class="btn btn-default">Back</a>
+        <a href="/candidates/create", {{ $recruitment->id }}>Apply</a>
     </div>
+
 
         {!! Form::open(['action' => ['\App\Http\Controllers\RecruitmentController@destroy', $recruitment->id], 'method' => 'POST', 'class' => 'float-right']) !!}
             {{ Form::hidden('_method', 'DELETE') }}

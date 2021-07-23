@@ -21,7 +21,7 @@ class CreateTrainingEmployeesTable extends Migration
             $table->unsignedBigInteger('employee_id');
 
             $table->foreign('training_id')->references('id')->on('trainings');
-            $table->foreign('employee_id')->references('id')->on('users');
+            $table->foreign('employee_id')->references('id')->on('employees');
         });
     }
 

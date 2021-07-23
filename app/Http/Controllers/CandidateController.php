@@ -69,7 +69,7 @@ class CandidateController extends Controller
          $candidate->add_info = $request->input('add_info');
          $candidate->expected_salary = $request->input('expected_salary');
          $candidate->recruitment_id = $request->input('recruitment_id');
-         $candidcandidateate->save();
+         $candidate->save();
          return redirect('/candidates')->with('success', 'Candidate Applied');
 
     }

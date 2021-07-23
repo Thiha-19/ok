@@ -24,7 +24,7 @@ class CreateLeaveRequestsTable extends Migration
             $table->unsignedBigInteger('employee_id');
             $table->unsignedBigInteger('approval_id');
 
-            $table->foreign('employee_id')->references('id')->on('users');
+            $table->foreign('employee_id')->references('id')->on('employees');
             $table->foreign('approval_id')->references('id')->on('approvals');
         });
     }

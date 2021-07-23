@@ -4,9 +4,9 @@
     <h1>This is Candidate Information Form</h1>
     {!! Form::open(['action' => '\App\Http\Controllers\CandidateController@store', 'method' =>'POST']) !!}
 
-        <div class="form-group">
-            {{ Form::text('recruitment_id','',['class' => 'form-control', 'hidden']) }}
-        </div>
+        {{-- <div class="form-group">
+            {{ Form::text('recruitment_id',$recruitment->id,['class' => 'form-control', 'readonly']) }}
+        </div> --}}
 
         <div class="form-group">
             {{ Form::label('candidate_name','Candidate Name') }}
@@ -60,7 +60,7 @@
 
         <div class="form-group">
             {{ Form::label('add_info','Additional Information') }}
-            {{ Form::text('add_info','',['class' => 'form-control', 'placeholder' => 'Eg.yes']) }}
+            {{ Form::textarea('add_info','',['class' => 'form-control', 'placeholder' => 'Eg.yes']) }}
         </div>
 
             {{ Form::submit('Apply', ['class' => 'btn btn-primary']) }}

@@ -22,7 +22,7 @@ class CreateAttendancesTable extends Migration
             $table->unsignedBigInteger('employee_id');
 
             $table->foreign('attendancetype_id')->references('id')->on('attendance_types');
-            $table->foreign('employee_id')->references('id')->on('users');
+            $table->foreign('employee_id')->references('id')->on('employees');
         });
     }
 

@@ -21,3 +21,4 @@ Route::resource('/roles', 'App\Http\Controllers\RoleController');
 Route::resource('/departments', 'App\Http\Controllers\DepartmentController');
 Route::resource('/recruitments', 'App\Http\Controllers\RecruitmentController');
 Route::resource('/candidates', 'App\Http\Controllers\CandidateController');
+Route::resource('/employees', 'App\Http\Controllers\EmployeeController');

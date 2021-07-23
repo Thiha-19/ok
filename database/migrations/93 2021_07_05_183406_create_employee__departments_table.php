@@ -19,10 +19,10 @@ class CreateEmployeeDepartmentsTable extends Migration
             $table->unsignedBigInteger('department_id');
             $table->unsignedBigInteger('employee_id');
             $table->timestamps();
-            
+
             $table->foreign('role_id')->references('id')->on('roles');//->onDelete('cascade');
             $table->foreign('department_id')->references('id')->on('departments');//->onDelete('cascade');
-            $table->foreign('employee_id')->references('id')->on('users');//->onDelete('cascade');
+            $table->foreign('employee_id')->references('id')->on('employees');//->onDelete('cascade');
         });
     }
 

@@ -11,35 +11,35 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    // public function up()
+    // {
 
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->string('address');
-            $table->string('ename');
-            $table->string('eaddress');
-            $table->string('info');
-            $table->rememberToken();
-            $table->timestamps();
+    //     Schema::create('users', function (Blueprint $table) {
+    //         $table->id();
+    //         $table->string('name');
+    //         $table->string('email')->unique();
+    //         $table->timestamp('email_verified_at')->nullable();
+    //         $table->string('password');
+    //         $table->string('address');
+    //         $table->string('ename');
+    //         $table->string('eaddress');
+    //         $table->string('info');
+    //         $table->rememberToken();
+    //         $table->timestamps();
 
-            $table->unsignedBigInteger('candidate_id');
+    //         $table->unsignedBigInteger('candidate_id');
 
-            $table->foreign('candidate_id')->references('id')->on('candidates');//->onDelete('cascade');
-        });
-    }
+    //         $table->foreign('candidate_id')->references('id')->on('candidates');//->onDelete('cascade');
+    //     });
+    // }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('users');
-    }
+    // /**
+    //  * Reverse the migrations.
+    //  *
+    //  * @return void
+    //  */
+    // public function down()
+    // {
+    //     Schema::dropIfExists('users');
+    // }
 }
