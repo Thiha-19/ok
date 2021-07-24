@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>This is Candidate Detail for update and delete</h1>
-    {!! Form::open(['url' => 'foo/bar']) !!}
+    {!! Form::open(['candidate' => 'foo/bar']) !!}
     <h1>{{$candidate-> id}}</h1>
     <div class="container">
         <h1>Candidate Name: {{$candidate-> candidate_name}}</h1>
@@ -17,6 +17,7 @@
         <h1>Expected Salary: {{$candidate-> expected_salary}}</h1>
         <h1>Additional Information: {{$candidate-> add_info}}</h1>
         <a href="/candidates/{{ $candidate->id }}/edit">Update</a>
+        <a href="/employee/create/{{ $candidate->id }}">Hire</a>
         <a href="/candidates" class="btn btn-default">Back</a>
     </div>
 

@@ -22,3 +22,8 @@ Route::resource('/departments', 'App\Http\Controllers\DepartmentController');
 Route::resource('/recruitments', 'App\Http\Controllers\RecruitmentController');
 Route::resource('/candidates', 'App\Http\Controllers\CandidateController');
 Route::resource('/employees', 'App\Http\Controllers\EmployeeController');
+
+Route::get('/candidate/create/{id}', 'App\Http\Controllers\CandidateController@create');
+Route::get('/candidate{id}', 'App\Http\Controllers\CandidateController@index');
+
+Route::get('/employee/create/{id}', 'App\Http\Controllers\EmployeeController@create');

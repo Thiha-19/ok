@@ -14,7 +14,10 @@
 
         <a href="/recruitments/{{ $recruitment->id }}/edit">Update</a>
         <a href="/recruitments" class="btn btn-default">Back</a>
-        <a href="/candidates/create", {{ $recruitment->id }}>Apply</a>
+        <a href="/candidate/create/{{ $recruitment->id }}" >Apply</a>
+        <a href="/candidate{{ $recruitment->id }}" >Candidate</a>
+
+
     </div>
 
 

@@ -3,7 +3,7 @@
 @section('content')
     <h1>This is Employee Information Form</h1>
     {!! Form::open(['action' => '\App\Http\Controllers\EmployeeController@store', 'method' =>'POST']) !!}
-
+        {{ Form::text('candidate_id',$id ) }}
         <div class="form-group">
             {{ Form::label('name','Employee Name') }}
             {{ Form::text('name','',['class' => 'form-control', 'placeholder' => 'Eg. Verstappen']) }}
@@ -16,7 +16,7 @@
 
         <div class="form-group">
             {{ Form::label('password','Password') }}
-            {{ Form::date('password','',['class' => 'form-control', 'placeholder' => '********']) }}
+            {{ Form::text('password','',['class' => 'form-control', 'placeholder' => '********']) }}
         </div>
 
         <div class="form-group">

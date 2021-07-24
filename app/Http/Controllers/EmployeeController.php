@@ -8,6 +8,7 @@ use App\Models\Employee;
 
 class EmployeeController extends Controller
 {
+    public $id;
     /**
      * Display a listing of the resource.
      *
@@ -25,11 +26,12 @@ class EmployeeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
+        $this->id=$id;
         $employees = Employee::all();
-        return view('employee.home',
-        ['candidates' => Candidate::all()]);
+        return view('employee.create',
+        ['candidates' => Candidate::all(),'id'=>$this->id]);
     }
 
     /**
@@ -59,6 +61,7 @@ class EmployeeController extends Controller
         $employee->ename = $request->input('ename');
         $employee->eaddress = $request->input('eaddress');
         $employee->info = $request->input('info');
+        $employee->candidate_id = $request->input('candidate_id');
         $employee->save();
          return redirect('/employees')->with('success', 'Employee Hired');
     }

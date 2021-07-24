@@ -5,10 +5,17 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <script src="{{ mix('/js/app.js') }}"></script>
    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    {{-- ////////////////////////////////////// --}}
+
+
+
+    {{-- //////////////////////////////////// --}}
+
     <title>Document</title>
 </head>
 <body>
-    {{-- @include('inc.nav') --}}
+    {{-- @include('inc.navs') --}}
     <div class="container">
         <div id="app">
             <example-component></example-component>

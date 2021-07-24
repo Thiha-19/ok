@@ -4,10 +4,7 @@
     <h1>This is Candidate Information Form</h1>
     {!! Form::open(['action' => '\App\Http\Controllers\CandidateController@store', 'method' =>'POST']) !!}
 
-        {{-- <div class="form-group">
-            {{ Form::text('recruitment_id',$recruitment->id,['class' => 'form-control', 'readonly']) }}
-        </div> --}}
-
+        {{ Form::hidden('recruitment_id',$id ) }}
         <div class="form-group">
             {{ Form::label('candidate_name','Candidate Name') }}
             {{ Form::text('candidate_name','',['class' => 'form-control', 'placeholder' => 'Eg.Tony']) }}

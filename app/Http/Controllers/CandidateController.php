@@ -13,6 +13,7 @@ class CandidateController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public $id;
     public function index()
     {
         $candidates = Candidate::all();
@@ -26,10 +27,12 @@ class CandidateController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
+        $this->id=$id;
         return view('candidate.create',
-        ['recruitments' => Recruitment::all()]);
+        ['recruitments' => Recruitment::all(),'id'=>$this->id]);
+
 
     }
 
@@ -41,6 +44,8 @@ class CandidateController extends Controller
      */
     public function store(Request $request)
     {
+        // print "hey";
+        // print ("ok $this->id");
         $this -> validate($request, [
             'candidate_name' => 'required',
             'email' => 'required',
@@ -68,7 +73,7 @@ class CandidateController extends Controller
          $candidate->graddate = $request->input('graddate');
          $candidate->add_info = $request->input('add_info');
          $candidate->expected_salary = $request->input('expected_salary');
-         $candidate->recruitment_id = $request->input('recruitment_id');
+         $candidate->recruitment_id =$request->input('recruitment_id');
          $candidate->save();
          return redirect('/candidates')->with('success', 'Candidate Applied');
 
@@ -83,7 +88,7 @@ class CandidateController extends Controller
     {
         $candidate = Candidate::find($id);
         return view('candidate.detail',
-        ['recruitments' => Recruitment::all()])->with('recruitment', $recruitment);
+        ['recruitments' => Recruitment::all()])->with('candidate', $candidate);
     }
 
     /**
@@ -96,7 +101,7 @@ class CandidateController extends Controller
     {
         $candidate = Candidate::find($id);
         return view('candidate.update',
-        ['recruitments' => Recruitment::all()])->with('recruitment', $recruitment);
+        ['recruitments' => Recruitment::all()])->with('candidate', $candidate);
     }
 
     /**
