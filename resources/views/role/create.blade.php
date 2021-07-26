@@ -5,7 +5,7 @@
     {!! Form::open(['action' => '\App\Http\Controllers\RoleController@store', 'method' =>'POST']) !!}
 
         <div class="form-group">
-            {{ Form::label('role','Role Name') }}
+            {{ Form::label('role','Role Name',['for' => 'floatingPassword']) }}
             {{ Form::text('role','',['class' => 'form-control', 'placeholder' => 'Eg.Marketing Staff']) }}
         </div>
 
@@ -19,7 +19,7 @@
             {{ Form::textarea('description','',['class' => 'form-control', 'placeholder' => 'Eg.yes']) }}
         </div>
 
-            {{ Form::submit('Save', ['class' => 'btn btn-primary']) }}
+            {{ Form::submit('Save', ['class' => 'btn btn-dark']) }}
 
     {!! Form::close() !!}
 @endsection

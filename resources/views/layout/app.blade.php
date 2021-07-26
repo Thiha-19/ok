@@ -15,10 +15,9 @@
     <title>Document</title>
 </head>
 <body>
-    {{-- @include('inc.navs') --}}
-    <div class="container">
+    @include('inc.nav')
+    <div class="container mx-auto">
         <div id="app">
-            <example-component></example-component>
             @include('inc.msg')
             @yield('content')
         </div>
