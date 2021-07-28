@@ -6,7 +6,7 @@
 
         <div class="form-group">
             {{ Form::label('num_of_positions','Number of Positions') }}
-            {{ Form::text('num_of_positions','',['class' => 'form-control', 'placeholder' => 'Eg.2']) }}
+            {{ Form::number('num_of_positions','',['class' => 'form-control', 'placeholder' => 'Eg.2']) }}
         </div>
 
         <div>

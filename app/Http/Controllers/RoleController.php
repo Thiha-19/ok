@@ -39,7 +39,7 @@ class RoleController extends Controller
     {
         $this -> validate($request, [
             'role' => 'required',
-            'approx_salary' => 'required',
+            'approx_salary' => 'required|max:4',
             'description' => 'required',
         ]);
 
@@ -89,7 +89,7 @@ class RoleController extends Controller
     {
         $this -> validate($request, [
             'role' => 'required',
-            'approx_salary' => 'required',
+            'approx_salary' => 'required|max:4',
             'description' => 'required',
         ]);
 

@@ -11,7 +11,7 @@
 
     <div class="form-group">
         {{ Form::label('email','Email') }}
-        {{ Form::text('email','',['class' => 'form-control', 'placeholder' => 'Eg.ok@mail.com']) }}
+        {{ Form::email('email','',['class' => 'form-control', 'placeholder' => 'Eg.ok@mail.com']) }}
     </div>
 
     <div class="form-group">

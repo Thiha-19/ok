@@ -11,7 +11,7 @@
 
     <div class="form-group">
         {{ Form::label('approx_salary','Approxiamte Salary') }}
-        {{ Form::text('approx_salary',$role->approx_salary,['class' => 'form-control']) }}
+        {{ Form::number('approx_salary',$role->approx_salary,['class' => 'form-control']) }}
     </div>
 
     <div class="form-group">

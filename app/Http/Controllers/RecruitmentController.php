@@ -47,7 +47,7 @@ class RecruitmentController extends Controller
     public function store(Request $request)
     {
         $this -> validate($request, [
-            'num_of_positions' => 'required',
+            'num_of_positions' => 'required|max:2',
             'start_date' => 'required',
             'end_date' => 'required',
             'description' => 'required',
@@ -104,7 +104,7 @@ class RecruitmentController extends Controller
     public function update(Request $request, $id)
     {
         $this -> validate($request, [
-            'num_of_positions' => 'required',
+            'num_of_positions' => 'required|max:2',
             'start_date' => 'required',
             'end_date' => 'required',
             'description' => 'required',

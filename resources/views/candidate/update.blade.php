@@ -11,7 +11,7 @@
 
     <div class="form-group">
         {{ Form::label('email','Email Address') }}
-        {{ Form::text('email',$candidate->email,['class' => 'form-control']) }}
+        {{ Form::email('email',$candidate->email,['class' => 'form-control']) }}
     </div>
 
     <div class="form-group">
@@ -21,17 +21,17 @@
 
     <div class="form-group">
         {{ Form::label('postal','Postal Code') }}
-        {{ Form::text('postal',$candidate->postal,['class' => 'form-control']) }}
+        {{ Form::number('postal',$candidate->postal,['class' => 'form-control']) }}
     </div>
 
     <div class="form-group">
         {{ Form::label('phone','Phone Number') }}
-        {{ Form::text('phone',$candidate->phone,['class' => 'form-control']) }}
+        {{ Form::number('phone',$candidate->phone,['class' => 'form-control']) }}
     </div>
 
     <div class="form-group">
         {{ Form::label('prior_exp','Prior Experience') }}
-        {{ Form::text('prior_exp',$candidate->prior_exp,['class' => 'form-control']) }}
+        {{ Form::number('prior_exp',$candidate->prior_exp,['class' => 'form-control']) }}
     </div>
 
     <div class="form-group">
@@ -51,7 +51,7 @@
 
     <div class="form-group">
         {{ Form::label('expected_salary','Expected Salary') }}
-        {{ Form::text('expected_salary',$candidate->expected_salary,['class' => 'form-control']) }}
+        {{ Form::number('expected_salary',$candidate->expected_salary,['class' => 'form-control']) }}
     </div>
 
     <div class="form-group">

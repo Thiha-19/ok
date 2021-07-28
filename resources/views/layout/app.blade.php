@@ -15,7 +15,7 @@
     <title>Document</title>
 </head>
 <body>
-    @include('inc.nav')
+    {{-- @include('inc.navs') --}}
     <div class="container mx-auto">
         <div id="app">
             @include('inc.msg')

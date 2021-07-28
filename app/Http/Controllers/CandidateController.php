@@ -52,10 +52,10 @@ class CandidateController extends Controller
             'dob' => 'required',
             'postal' => 'required',
             'phone' => 'required',
-            'prior_exp' => 'required',
+            'prior_exp' => 'required|max:2',
             'education' => 'required',
             'gradfrom' => 'required',
-            'graddate' => 'required',
+            'graddate' => 'required|max:4',
             'add_info' => 'required',
             'expected_salary' => 'required'
         ]);
@@ -119,10 +119,10 @@ class CandidateController extends Controller
             'dob' => 'required',
             'postal' => 'required',
             'phone' => 'required',
-            'prior_exp' => 'required',
+            'prior_exp' => 'required|max:2',
             'education' => 'required',
             'gradfrom' => 'required',
-            'graddate' => 'required',
+            'graddate' => 'required|max:4',
             'add_info' => 'required',
             'expected_salary' => 'required'
         ]);

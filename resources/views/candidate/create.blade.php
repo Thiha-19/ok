@@ -12,7 +12,7 @@
 
         <div class="form-group">
             {{ Form::label('email','Email Address') }}
-            {{ Form::text('email','',['class' => 'form-control', 'placeholder' => 'Example@mail.com']) }}
+            {{ Form::email('email','',['class' => 'form-control', 'placeholder' => 'Example@mail.com']) }}
         </div>
 
         <div class="form-group">
@@ -22,17 +22,17 @@
 
         <div class="form-group">
             {{ Form::label('postal','Postal Code') }}
-            {{ Form::text('postal','',['class' => 'form-control', 'placeholder' => 'Eg.11101']) }}
+            {{ Form::number('postal','',['class' => 'form-control', 'placeholder' => 'Eg.11101']) }}
         </div>
 
         <div class="form-group">
             {{ Form::label('phone','Phone Number') }}
-            {{ Form::text('phone','',['class' => 'form-control', 'placeholder' => 'Eg.*** *** ***']) }}
+            {{ Form::number('phone','',['class' => 'form-control', 'placeholder' => 'Eg.*** *** ***']) }}
         </div>
 
         <div class="form-group">
             {{ Form::label('prior_exp','Prior Experience') }}
-            {{ Form::text('prior_exp','',['class' => 'form-control', 'placeholder' => 'Eg. 5 years (In Numbers Only)']) }}
+            {{ Form::number('prior_exp','',['class' => 'form-control', 'placeholder' => 'Eg. 5 years (In Numbers Only)']) }}
         </div>
 
         <div class="form-group">
@@ -47,12 +47,12 @@
 
         <div class="form-group">
             {{ Form::label('graddate','Graduated Year') }}
-            {{ Form::text('graddate','',['class' => 'form-control', 'placeholder' => 'Eg. 2001 (In Numbers Only)']) }}
+            {{ Form::number('graddate','',['class' => 'form-control', 'placeholder' => 'Eg. 2001 (In Numbers Only)']) }}
         </div>
 
         <div class="form-group">
             {{ Form::label('expected_salary','Expected Salary') }}
-            {{ Form::text('expected_salary','',['class' => 'form-control', 'placeholder' => 'Eg. $5000 (In Numbers Only)']) }}
+            {{ Form::number('expected_salary','',['class' => 'form-control', 'placeholder' => 'Eg. $5000 (In Numbers Only)']) }}
         </div>
 
         <div class="form-group">
