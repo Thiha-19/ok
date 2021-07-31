@@ -76,7 +76,7 @@ class EmployeeController extends Controller
     {
         $employee = Employee::find($id);
         return view('employee.detail',
-        ['candidates' => Candidate::all()])->with(['employees' => $employees]);
+        ['candidates' => Candidate::all()])->with(['employee' => $employee]);
     }
 
     /**
@@ -89,7 +89,7 @@ class EmployeeController extends Controller
     {
         $employee = Employee::find($id);
         return view('employee.update',
-        ['candidates' => Candidate::all()])->with(['employees' => $employees]);
+        ['candidates' => Candidate::all()])->with(['employee' => $employee]);
     }
 
     /**

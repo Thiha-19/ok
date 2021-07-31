@@ -1,3 +1,35 @@
+<?php
+session_start();
+
+if(isset($_POST['login']))
+{
+	$txtmail=$_POST['txtmail'];
+	$txtpassword=$_POST['txtpassword'];
+
+	$Check="SELECT *
+			FROM employee
+			WHERE email='$txtmail'
+			AND password='$txtpassword'";
+	$ret=mysqli_query($connection,$Check);
+	$count=mysqli_num_rows($ret);
+	$rows=mysqli_fetch_array($ret);
+
+	if($count < 1)
+	{
+		echo "<script>window.alert('Error : Login Fail | Check Email or Password')</script>";
+		echo "<script>window.location='stafflogin.php'</script>";
+	}
+	else
+	{
+		$_SESSION['StaffID']=$rows['StaffID'];
+		$_SESSION['StaffName']=$rows['StaffName'];
+
+		echo "<script>window.alert('Success : Staff Login Success')</script>";
+		echo "<script>window.location='staffhome.php'</script>";
+	}
+}
+?>
+
 @extends('layout.app')
 
 @section('content')
@@ -8,11 +40,11 @@
         <div class="rounded-md shadow-sm -space-y-px">
           <div>
             <label for="email-address" class="sr-only">Email address</label>
-            <input id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
+            <input id="email-address" name="txtemail" type="email" autocomplete="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
           </div>
           <div>
             <label for="password" class="sr-only">Password</label>
-            <input id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
+            <input id="password" name="txtpassword" type="password" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
           </div>
         </div>
 
@@ -32,7 +64,7 @@
         </div>
 
         <div>
-          <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          <button type="submit" name="login" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             <span class="absolute left-0 inset-y-0 flex items-center pl-3">
               <!-- Heroicon name: solid/lock-closed -->
               <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
