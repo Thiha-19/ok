@@ -38,12 +38,22 @@ class RoleController extends Controller
     public function store(Request $request)
     {
         $this -> validate($request, [
-            'role' => 'required',
+            'role' => 'required|unique:roles',
             'approx_salary' => 'required|max:4',
             'description' => 'required',
         ]);
 
-        //create role
+        if (Role::where('role', '=', ('role'))->count() > 0) {
+            echo "<script>window.alert('Role Name Already Exist.')</script>";
+         }
+
+        // $role = Role::where('email', '=', ('role'))->first();
+        // if ($role > 0) {
+        //     echo "<script>window.alert('Role Name Already Exist.')</script>";
+        // }
+
+        else{
+            //create role
         $role = new Role;
         $role->role = $request->input('role');
         $role->approx_salary = $request->input('approx_salary');
@@ -51,6 +61,9 @@ class RoleController extends Controller
         $role->save();
 
         return redirect('/roles')->with('success', 'Role Added');
+        }
+
+
     }
 
     /**

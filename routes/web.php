@@ -27,3 +27,4 @@ Route::get('/candidate/create/{id}', 'App\Http\Controllers\CandidateController@c
 Route::get('/candidate{id}', 'App\Http\Controllers\CandidateController@index');
 
 Route::get('/employee/create/{id}', 'App\Http\Controllers\EmployeeController@create');
+Route::get('/employee{id}', 'App\Http\Controllers\EmployeeController@index');

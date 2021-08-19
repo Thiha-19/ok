@@ -56,8 +56,8 @@ class CandidateController extends Controller
             'education' => 'required',
             'gradfrom' => 'required',
             'graddate' => 'required|max:4',
+            'expected_salary' => 'required|max:4',
             'add_info' => 'required',
-            'expected_salary' => 'required'
         ]);
 
          //create candidate

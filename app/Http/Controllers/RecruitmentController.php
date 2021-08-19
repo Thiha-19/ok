@@ -48,6 +48,8 @@ class RecruitmentController extends Controller
     {
         $this -> validate($request, [
             'num_of_positions' => 'required|max:2',
+            'role' => 'required',
+            'department' => 'required',
             'start_date' => 'required',
             'end_date' => 'required',
             'description' => 'required',
