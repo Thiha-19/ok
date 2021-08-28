@@ -38,7 +38,7 @@ class DepartmentController extends Controller
     public function store(Request $request)
     {
         $this -> validate($request, [
-            'department_name' => 'required',
+            'department_name' => 'required|unique:department_name',
             'email' => 'required',
             'location' => 'required',
             'description' => 'required',
